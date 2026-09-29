@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 3 - Métodos de Salida</title>
+</head>
+<script>
+    function ventanaAlerta() {
+
+        alert("hola");
+    }
+
+    function mensajeConsola() {
+        console.log("Mensaje desde la consola - Pau Miquel")
+    }
+
+    function modificarDom() {
+
+        document.getElementById("texto").innerHTML = "Texto modificado con innerHTML.";
+    }
+
+    function docWrite() {
+        document.write("Mensaje escrito con 'Document.write'");
+    }
+</script>
+<body>
+    <h1>Prueba de Métodos de Salida en JavaScript</h1>
+    <p id="texto">Contenido previo...</p>
+
+    <button onclick=ventanaAlerta()>1. Ventana Alerta</button>
+    <button onclick=mensajeConsola()>2. Mensaje en Consola</button>
+    <button onclick=modificarDom()>3. Modificar DOM (innerHTML)</button>
+    <button onclick=docWrite()>4. Document write</button>
+</body>
+</html>
