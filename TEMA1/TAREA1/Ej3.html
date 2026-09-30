@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Ej-3</title>
+
+    <script>
+
+// En esta función lo que he hecho ha sido crear una constante
+// Y que esa constante pille el id de la frase a la que le corresponda
+// cada botón, y el botón en los parametros del "onclick" será el encargado
+//
+function responder(id, respuesta, correcta) {
+
+    const frase = document.getElementById(id);
+    frase.style.color = (respuesta === correcta) ? "green" : "red";
+}
+</script>
+</head>
+
+
+
+<body>
+    <h1>Ejercicio 3 - Test</h1>
+
+
+    <!-- Cada pregunta tiene su ID como muestro aquí -->
+    <p id="p1">¿Los humanos son capaces de volar?</p>
+
+    <!-- Y luego en los parámetros de la función, pongo el id de la pregunta
+     a la que corresponda el botón y las dos posibilidades 
+     ahora para que la pregunta se ponga de color verde, ambos parametros tendrán
+     que ser "true" o "false", de otro modo, la pregunta se pondrá roja -->
+    <button onclick="responder('p1', true, false)">Verdadero</button>
+    <button onclick="responder('p1', false, false)">Falso</button>
+
+
+    <p id="p2">¿Existen máquinas del tiempo?</p>
+
+    <button onclick="responder('p2', true, false)">Verdadero</button>
+    <button onclick="responder('p2', false, false)">Falso</button>
+
+
+    <p id="p3">¿Es caro comprarse un coche deportivo?</p>
+
+    <button onclick="responder('p3', true, true)">Verdadero</button>
+    <button onclick="responder('p3', false, true)">Falso</button>
+
+    <p id="p4">¿Es JavaScript lo mismo que Java?</p>
+
+    <button onclick="responder('p4', true, false)">Verdadero</button>
+    <button onclick="responder('p4', false, false)">Falso</button>
+
+
+    <p id="p5">¿Es Minecraft el juego más vendido de la historia?</p>
+
+    <button onclick="responder('p5', true, true)">Verdadero</button>
+    <button onclick="responder('p5', false, true)">Falso</button>
+
+
+    <p id="p6">¿Se puede conducir siendo menor de edad?</p>
+
+
+    <button onclick="responder('p6', true, false)">Verdadero</button>
+    <button onclick="responder('p6', false, false)">Falso</button>
+
+    <p id="p7">¿Pueden los microondas calentar comida?</p>
+
+    <button onclick="responder('p7', true, true)">Verdadero</button>
+    <button onclick="responder('p7', false, true)">Falso</button>
+
+
+</body>
+</html>

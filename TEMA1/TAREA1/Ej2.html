@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+
+<body>
+
+
+    <!-- REPASO PARA CAMBIAR IMÁGENES EN HTML MEDIANTE JS-->
+    <h1>Ejercicio 2 - Secuencia de imágenes</h1>
+    <img id="myFPImage" onclick="cambiarPic()"
+        src="https://media.gettyimages.com/id/2235446725/es/foto/barcelona-spain-raphinha-of-fc-barcelona-celebrates-scoring-his-teams-fourth-goal-during-the.jpg?s=594x594&w=gi&k=20&c=UgEZqQbroBua1xwvZIC-jWqdY4NJjTh1dPt1_Ln7PkQ="
+        width="100" height="100">
+    <p>Haz click sobre las imagenes para crear una secuencia de imágenes.</p>
+
+
+
+    <script>
+
+        function cambiarPic() {
+            var image = document.getElementById('myFPImage');
+
+            if (image.src.match("17582e69c56cf25a2ec5bd7accac6a9306d007362814b1171e7cd8d69ac41881&ipo")) {
+                image.src = "https://images.ecestaticos.com/3bPOU21rSG1DkFK-LfDJvV8kl-A=/0x0:2272x1515/1200x1200/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fa65%2Ff47%2F13f%2Fa65f4713f80f121796f2d8270948a791.jpg";
+            } else if (image.src.match("3bPOU21rSG1DkFK-LfDJvV8kl-A=")) {
+                image.src = "https://media.gettyimages.com/id/2235446725/es/foto/barcelona-spain-raphinha-of-fc-barcelona-celebrates-scoring-his-teams-fourth-goal-during-the.jpg?s=594x594&w=gi&k=20&c=UgEZqQbroBua1xwvZIC-jWqdY4NJjTh1dPt1_Ln7PkQ=";
+            } else if (image.src.match("2235446725")) {
+                image.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs.yimg.com%2Fny%2Fapi%2Fres%2F1.2%2FzuZ8OGUrSchjwzDhdZnjvg--%2FYXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEyODA7Y2Y9d2VicA--%2Fhttps%3A%2F%2Fmedia.zenfs.com%2Fen%2Fonefootball_articles_802%2F98e0115bc9d985173c5b0067159b9451&f=1&nofb=1&ipt=a677756f98c99415c7de432f7e737a1c5c8082dd89bc9e6c04c0d8264f6d221c&ipo=images";
+            } else if (image.src.match("a677756f98c99415c7de432f7e737a1c5c8082dd89bc9e6c04c0d8264f6d221c&ipo")) {
+                image.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fbe%2F7c%2F90%2Fbe7c90abf115b8b8aa9f8d4b1bdfac96.jpg&f=1&nofb=1&ipt=17582e69c56cf25a2ec5bd7accac6a9306d007362814b1171e7cd8d69ac41881&ipo=images";
+            }
+        }
+
+        function myFunction() {
+
+            var x = document.getElementById("mytxt");
+            x.style.fontSize = "25px";
+            x.style.color = "red";
+
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
