@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Actividad 5</title>
+    <script>
+        function mostrarMensaje(idBoton) {
+
+            msg = document.getElementById("mensajeBienvenida")
+
+
+            if (idBoton == "espanyol")  {
+
+                msg.innerHTML = "Bienvenido seas a mi página web con botones! :D <br> - Pau Miquel"
+                msg.style.color = "red";
+
+            } else if (idBoton == "ruso") {
+
+                msg.innerHTML = "Добро пожаловать на мой сайт с кнопками! :D <br> - Pau Miquel"
+                msg.style.color = "orange";
+                
+            } else if (idBoton == "ingles") {
+
+                msg.innerHTML = "Welcome to my website with buttons! :D <br> - Pau Miquel"
+                msg.style.color = "blue";
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Mensajes de bienvenida</h1>
+
+    <p>Pulsa en cualquiera de estos tres botones para generar un mensaje de bienvenida en el idioma deseado!</p>
+
+    <button id="espanyol" onclick="mostrarMensaje(this.id)">Español</button>
+    <button id="ruso" onclick="mostrarMensaje(this.id)">Ruso</button>
+    <button id="ingles" onclick="mostrarMensaje(this.id)">Inglés</button>
+
+    <p id="mensajeBienvenida"></p>
+</body>
+</html>
