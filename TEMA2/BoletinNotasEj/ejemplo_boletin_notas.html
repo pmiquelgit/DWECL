@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Boltein notas</title>
+    <link rel="stylesheet" href="ejemplo_boletin_notas.css">
+</head>
+
+<body>
+    <h1>Boletín de notas de la clase</h1>
+
+    <a href="">Notas</a>
+    <a href="">Consultas</a>
+
+    <div id="caja-notas">
+        <h3>Notas por trimestre</h3>
+
+        <table id="tabla-notas" border="1">
+            <thead>
+                <tr>
+                    <th>Alumno</th>
+                    <th>1T</th>
+                    <th>2T</th>
+                    <th>3T</th>
+                    <th>Media</th>
+                    <th>Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ana</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>8.00</td>
+                    <td>Notable</td>
+                </tr>
+                <tr>
+                    <td>Luis</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>5.00</td>
+                    <td>Suficiente</td>
+                </tr>
+                <tr>
+                    <td>Marta</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3.00</td>
+                    <td>Insuficiente</td>
+                </tr>
+                <tr>
+                    <td>Pablo</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>9.33</td>
+                    <td>Sobresaliente</td>
+                </tr>
+                <tr>
+                    <td>Sara</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>5.00</td>
+                    <td>Suficiente</td>
+                </tr>
+                <tr>
+                    <td>Lamin</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3.33</td>
+                    <td>Insuficiente</td>
+                </tr>
+                <tr>
+                    <td>Joselito</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3.33</td>
+                    <td>Insuficiente</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <br>
+
+    <div id="caja-alumnos">
+
+        <h3>Añadir alumno</h3>
+
+        <label>Nombre: </label>
+        <input type="text">
+
+        <label>1T: </label>
+        <input type="number" id="t1" min="0" max="10">
+
+        <label>2T: </label>
+        <input type="number" id="t2" min="0" max="10">
+
+        <label>3T: </label>
+        <input type="number" id="t3" min="0" max="10">
+
+        <button>Añadir</button>
+
+        <br>
+
+        <button id="datosIniciales">Volver a los datos iniciales</button>
+
+        <p id="personasAñadidas">Añadido X. Ahora hay Z alumnos.</p>
+
+    </div>
+</body>
+
+</html>

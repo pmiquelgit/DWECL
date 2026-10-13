@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletín de notas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <h1>Boletín de notas de la clase</h1>
+
+  <nav>
+    <a href="#notas">Notas</a>
+    <span>|</span>
+    <a href="#consultas">Consultas</a>
+  </nav>
+
+  <main>
+    <section id="notas" class="tarjeta">
+      <h2>Notas por trimestre</h2>
+      <table id="tabla-notas">
+        <thead>
+          <tr>
+            <th>Alumno</th>
+            <th>1T</th>
+            <th>2T</th>
+            <th>3T</th>
+            <th>Media</th>
+            <th>Calificación</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="consultas" class="tarjeta">
+      <h2>Añadir alumno</h2>
+      <div class="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+
+        <label for="t1">1T:</label>
+        <input type="number" id="t1" min="0" max="10" step="any">
+
+        <label for="t2">2T:</label>
+        <input type="number" id="t2" min="0" max="10" step="any">
+
+        <label for="t3">3T:</label>
+        <input type="number" id="t3" min="0" max="10" step="any">
+
+        <button id="btn-anadir" class="btn-azul">Añadir</button>
+      </div>
+
+      <button id="btn-reset" class="btn-oscuro">Volver a los datos iniciales</button>
+      <p id="mensaje"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
