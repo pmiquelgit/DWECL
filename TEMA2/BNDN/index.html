@@ -56,6 +56,33 @@
       <button id="btn-reset" class="btn-oscuro">Volver a los datos iniciales</button>
       <p id="mensaje"></p>
     </section>
+
+
+    <section class="tarjeta">
+
+      <h2>Consultas</h2>
+      <div class="formulario">
+
+        <button id="btn-aprobados" class="btn-azul">Contar aprobados</button>
+        <button id="btn-mejor" class="btn-azul">Mejor nota de la clase</button>
+        <button id="btn-media-trim" class="btn-azul">Media de un trimestre</button>
+        <select id="select-trimestre">
+          <option value="0">1º Trimestre</option>
+          <option value="1">2º Trimestre</option>
+          <option value="2">3º Trimestre</option>
+        </select>
+      </div>
+
+      <div class="formulario">
+        <input type="text" id="buscar-nombre" placeholder="Nombre del alumno">
+        <button id="btn-buscar" class="btn-azul">Buscar alumno</button>
+      </div>
+
+      <h3>Resultado</h3>
+      <pre id="resultado"></pre>
+
+
+    </section>
   </main>
 
   <script src="script.js"></script>

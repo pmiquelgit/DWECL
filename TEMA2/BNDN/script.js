@@ -105,3 +105,126 @@ document.getElementById("btn-reset").addEventListener("click", volverADatosInici
 
 // Primera carga
 pintarTabla();
+
+
+
+/////////////////////////////////////////////////////////////
+// Aquí continuaré con la extensión del Ejercicio 1 - Tema 2
+/////////////////////////////////////////////////////////////
+
+///////////////////////////
+// MOSTRAR RESULTADO
+///////////////////////////
+
+// Con esto, voy a recoger los tres datos que voy a necesitar
+// Más adelante en el ejercicio
+const resultado = document.getElementById("resultado");
+const selectTrimestre = document.getElementById("select-trimestre");
+const inputBuscar = document.getElementById("buscar-nombre");
+
+// Con esta función aplicaré en el texto la cantidad de alumnos que hay
+// aprobados con respecto a la cantidad de alumnos que hay en total
+function mostrarResultado(texto) {
+  resultado.textContent = texto;
+}
+
+// Creo una constante que será el numero de aprobados
+// Con ".filter" filtraré los alumnos que tienen una
+// media de 5 o más.
+function contarAprobados() {
+  const aprobados = alumnos.filter(alumno => calcularMedia(alumno.notas) >= 5);
+  mostrarResultado(`Aprobados: ${aprobados.length} de ${alumnos.length}`);
+}
+
+
+
+///////////////////////////
+// MEJOR NOTA
+///////////////////////////
+
+// Defino las variables que recogerán la mejor nota
+// Y el nombre del alumno con la mejor nota
+function mejorNota() {
+  let mejor = -1;
+  let nombreMejor = "";
+
+  alumnos.forEach(alumno => {
+    alumnos.notas.forEach(nota => {
+      if (nota > mejor) {
+        mejor = nota;
+        nombreMejor = alumno.nombre;
+      }
+    })
+  });
+
+    mostrarResultado(`Mejor nota de la clase: ${mejor} (${nombreMejor})`);
+}
+
+
+
+///////////////////////////
+// MEDIA DEL TRIMESTRE
+///////////////////////////
+
+function mediaTrimestre(){
+  // Defino una constante para saber de qué trimestre
+  // quiero hacer la media
+  const posicion = parseInt(selectTrimestre.value);
+
+  // Uso un for each para sumar todas las notas de ese trimestre
+  // y luego poder hacer la media de estos
+  let suma = 0;
+  alumnos.forEach(alumno => {
+    suma += alumno.notas[posicion];
+  });
+
+  const media = suma / alumnos.length;
+  const textoTrimestre = selectTrimestre.options[selectTrimestre.selectedIndex].text;
+  
+  mostrarResultado(`Media del ${textoTrimestre}: ${media.toFixed(2)}`);
+}
+
+
+
+///////////////////////////
+// BUSCAR ALUMNO
+///////////////////////////
+
+function buscarAlumno() {
+  // Con esto, recogemos el nombre que se ha introducido
+  // En el apartado de "Buscar alumno" en la última sección
+  const nombreBuscado = inputBuscar.value.trim().toLowerCase();
+
+  // Si el nombre es vacío, nos salimos directamente
+  if (nombreBuscado === "") {
+    return;
+  }
+
+  // Con esto encuentro la posicion del alumno en la tabla
+  const posicionAlumno = alumnos.findIndex(
+    alumno => alumno.nombre.toLowerCase() === nombreBuscado
+  );
+
+  // Si la posición es negativa, nos salimos directamente
+  if (posicionAlumno === -1) {
+    mostrarResultado("No se ha encontrado a ningún alumno con ese nombre.");
+    return;
+  }
+
+  const alumno = alumnos[posicionAlumno];
+  const media = calcularMedia(alumno.notas);
+
+  mostrarResultado(
+    `${alumno.nombre} está en la posición ${posicionAlumno}\n` +
+    `Notas: ${alumno.notas.join(", ")}\n` +
+    `Media: ${media.toFixed(2)} (${obtenerCalificacion(media)})`
+  );
+  
+}
+
+
+document.getElementById("btn-aprobados").addEventListener("click", contarAprobados);
+document.getElementById("btn-mejor").addEventListener("click", mejorNota);
+document.getElementById("btn-media-trim").addEventListener("click", mediaTrimestre);
+document.getElementById("btn-buscar").addEventListener("click", buscarAlumno);
+
