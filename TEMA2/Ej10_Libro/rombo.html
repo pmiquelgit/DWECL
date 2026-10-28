@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Rombo test</title>
+    <script>
+
+        // Este es el número de filas
+        // Que tendrá el rombo
+        let filas = 7;
+
+        if (filas % 2 === 0) {
+            filas++;
+        }
+
+        // Para saber el medio del rombo
+        // Restaré el número de filas por 1
+        // (Porque el número de filas será
+        // siempre impar)
+        const medio = (filas - 1) / 2;
+
+        // Aquí iré guardando todas las filas del rombo
+        let rombo = "";
+
+        // Recorro cada fila, de la 0 a la última
+        for (let i = 0; i < filas; i++) {
+
+            // k vale 0 en las puntas y es máximo en el centro
+            const k = medio - Math.abs(i - medio);
+
+            // Espacios iniciales + primer asterisco
+            let linea = " ".repeat(medio - k) + "*";
+
+            // Si no es una punta (k > 0), añadimos
+            // los espacios del interior y el segundo asterisco
+            if (k > 0) {
+                linea += " ".repeat(2 * k - 1) + "*";
+            }
+
+            // Guardamos la fila y saltamos de línea
+            rombo += linea + "\n";
+        }
+
+        // <pre> respeta los espacios y los saltos de línea
+        document.write("<pre>" + rombo + "</pre>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
