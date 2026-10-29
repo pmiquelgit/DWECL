@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Búsqueda de cookie</title>
+
+    <script defer>
+
+        // Crea una cookie "idioma=es" que dure 7 días, léela con leerCookie() y después bórrala.
+        // Comprueba casa paso en devTools.
+        // Pista: max-age va en segundos: 7 * 24 * 3600
+        document.cookie = "idioma=es; max-age=65000; path=/";
+        const cookiesTexto = document.cookie;
+
+        
+        function leerCookie(nombre) {
+            return localStorage.getItem("idioma")
+        }
+
+        console.log("El idioma guardado en la memoria es: " + leerCookie("idioma"));
+
+        function borrarCookie(nombre) {
+            const cookiesLista = cookiesTexto.split("; ");
+
+            for (const cookie of cookiesLista) {
+
+                const partes = cookie.split("=");
+
+                if (partes[0] == "idioma") {
+
+                    document.cookie = `${nombre}=; max-age=0; path=/`;
+                    return "La cookie se ha eliminado."
+
+                }
+            }
+            return "La cookie no se ha eliminado."
+        }
+
+        console.log(borrarCookie("idioma"));
+        console.log(leerCookie("idioma"));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const cookiesPartes = cookiesLista[i].split("=");
+            console.log(cookiesPartes);
